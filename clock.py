@@ -1,8 +1,7 @@
 # This is a simple algorithm for running a clock
 
 # Import tkinter module for the gui
-from tkinter import *
-from tkinter.ttk import *
+import tkinter as tk 
 
 # Now import the time module
 from time import strftime
@@ -13,7 +12,11 @@ def get_time():
     label.after(1000, get_time)
 
 # start the root window for the clock
-root = Tk()
-label = Label(root, font=('ds-digital', 100), bg='black',fg='white')
-label.pack(ANCHOR="center")
+root = tk.Tk()
+root.title("Tkinter Clock")
+label = tk.Label(root, font=('ds-digital', 100), background='black',foreground='white')
+label.pack(anchor="center")
+
+get_time()
+root.mainloop()
 
